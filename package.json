@@ -1,0 +1,29 @@
+{
+  "name": "css-anaglyph",
+  "version": "1.0.0",
+  "description": "Dica de como criar o efeito anaglyph 3d em texto com css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victordev/css-anaglyph.git"
+  },
+  "keywords": [
+    "anaglyph",
+    "3d",
+    "css",
+    "css3",
+    "text-shadow",
+    "anaglyph"
+  ],
+  "author": "Victor Martins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victordev/css-anaglyph/issues"
+  },
+  "homepage": "https://github.com/victordev/css-anaglyph#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.1.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-recess": "^1.0.1"
+  }
+}
