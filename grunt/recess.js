@@ -1,10 +1,11 @@
 module.exports = {
   dist: {
     options: {
+      compress: true,
       compile: true
     },
     files: {
-      'assets/css/main.css': 'assets/less/main.less'
+      'assets/css/main.min.css': 'assets/less/main.less'
     }
   }
 };

@@ -1,0 +1,87 @@
+* {
+  .box-sizing();
+  &:before,
+  &:after {
+    .box-sizing();
+  }
+}
+
+body {
+  font-family: @base-font;
+  font-weight: 400;
+  background-color: @base-color;
+  letter-spacing: 2px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: .3em;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-image: url('https://pt.wikipedia.org/static/1.26wmf19/skins/Vector/images/external-link-ltr-icon.png');
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+pre {
+  margin-top: -12px;
+  margin-bottom: -12px;
+}
+
+code {
+  margin-top: 0;
+  letter-spacing: 0;
+  &.inline {
+    background-color: #000;
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 90%;
+  }
+}
+
+.container {
+  max-width: 900px;
+  .center-block();
+  margin-bottom: 30px;
+  .title {
+    text-align: center;
+    font-size: 3em;
+  }
+}
+
+.anaglyph {
+  .text-shadow(-0.08em 0 0 red, 0.08em 0 0 cyan;);
+}
+
+.anaglyph-2 {
+  color: red;
+  mix-blend-mode: multiply;
+  transform-origin: 0% 50%;
+  position: relative;
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translate(3px, 2px);
+    color: cyan;
+    mix-blend-mode: multiply;
+  }
+}

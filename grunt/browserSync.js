@@ -2,9 +2,8 @@ module.exports = {
   dev: {
     bsFiles: {
       src : [
-      '**/*.css',
-      '**/*.html',
-      '**/*.js'
+      'assets/css/*.css',
+      '*.html'
       ]
     },
     options: {

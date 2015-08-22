@@ -8,9 +8,63 @@
   <meta name="description" content="Dica de como criar o efeito anaglyph 3d em texto com css">
   <meta name="keywords" content="anaglyph 3d css, css3, text-shadow anaglyph">
 
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 <body>
-  <h1>Efeito anaglyph 3d com css</h1>
+  <div class="container">
+    <h1 class="title anaglyph">anaglyph 3d com css</h1>
+
+    <p><a href="https://pt.wikipedia.org/wiki/An%C3%A1glifo">Anáglifo</a> é uma imagem (ou um vídeo) formatada de maneira especial para fornecer um efeito <a href="https://pt.wikipedia.org/wiki/Tridimensional">tridimensional</a>  <a href="https://pt.wikipedia.org/wiki/Estereoscopia">estereoscópico</a> quando visto com óculos de duas cores (cada lente com uma cor diferente).</p>
+  </div>
+
+  <div class="container">
+    <h2>como fazer isso com css</h2>
+
+    <p>Existem duas formas de fezer o efeito com css. O primeiro é com <code class="inline">text-shadow</code>. Tudo bem simples, você só precisa aplicar duas sombras, uma com margem negativa e outra positiva, uma vermelho e outra ciano.</p>
+    <h1 class="anaglyph">exemplo:</h1>
+    <pre>
+      <code class="html">
+        &lt;h2 class=&quot;anaglyph&quot;&gt;my text anaglyph 3d&lt;/h2&gt;
+      </code>
+      <code class="css">
+        .anaglyph {
+          text-shadow: -0.08em 0 0 red, 0.08em 0 0 cyan;
+        }
+      </code>
+    </pre>
+
+    <p>A outra forma de fazer isso é com pseudo elementos css <code class="inline">:before</code> ou <code class="inline">:after</code>, bem simples também olha só:</p>
+    <h1 class="anaglyph-2" data-text="exemplo:">exemplo:</h1>
+    <pre>
+      <code class="html">
+        &lt;h2 class=&quot;anaglyph-2&quot; data-text=&quot;my text anaglyph 3d&quot;&gt;my text anaglyph 3d&lt;/h2&gt;
+      </code>
+    </pre>
+    <p>Primeiro declaramos o atributo <code class="inline">data-text</code> como o mesmo valor do texto. E no css definimos as cores e criamos o pseudo elemento:</p>
+    <pre>
+      <code class="css">
+        .anaglyph-2 {
+          position: relative;
+          color: red;
+          mix-blend-mode: multiply;
+        }
+
+        .anaglyph-2:after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          color: cyan;
+          content: attr(data-text);
+          transform: translate(3px, 2px);
+          mix-blend-mode: multiply;
+        }
+      </code>
+    </pre>
+    <p>No pseudo elemento <code class="inline">:after</code> pegamos o valor do texto com o atributo <code class="inline">content</code> e posicionamos como se fosse uma sombra. Depois é só aplicar um blend multiply com o atributo <code class="inline">mix-blend-mode</code></p>
+  </div>
+<script src="assets/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
